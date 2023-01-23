@@ -12,27 +12,25 @@ export default function LogosRender() {
     const [data, setData] = useState([])
 
 
-    function reply(cantidad) {
-        const components = []
-        for (let i = 0; i < cantidad; i++) {
-
-            components.push(!components.length
-                ?
-                <div className={Styles.selected} key={id++}><Logo /></div>
-                :
-                <div className={Styles.unselected} key={id++}><Logo /></div>)
-
-        }
-
-        return components
-    }
 
 
     useEffect(() => {
+        function reply(cantidad) {
+            const components = []
+            for (let i = 0; i < cantidad; i++) {
+
+                components.push(!components.length
+                    ?
+                    <div className={Styles.selected} key={id++}><Logo /></div>
+                    :
+                    <div className={Styles.unselected} key={id++}><Logo /></div>)
+            }
+            return components
+        }
         !data.length
             &&
             setData(reply(4))
-    }, [])
+    }, [data, id])
 
     function handleClick(e) {
         const value = e.target.value
@@ -40,7 +38,6 @@ export default function LogosRender() {
         const target = e.target.parentNode.childNodes[1].children
         Array.from(target).forEach(logo => logo.className = Styles.unselected)
         target[position].className = Styles.selected
-        console.log(target)
     }
 
 
