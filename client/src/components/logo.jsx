@@ -5,7 +5,7 @@ export default function Logo (){
 
     return (
         <div className={Styles.container}>
-            <img src={logo} alt="" />
+            <img src={logo} alt="logo ProFlight " />
         </div>
     )
 }
