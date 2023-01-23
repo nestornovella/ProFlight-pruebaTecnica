@@ -1,0 +1,40 @@
+
+.container{
+    display: flex;
+    align-items: center;
+    margin-top: 150px;
+ 
+
+}
+
+
+.container button{
+    width: 100px;
+    height: 100px;
+    background-position: center;
+    background-size: cover;
+    border: none;
+    cursor: pointer;
+    
+}
+
+.last{
+    background:url("../logo/leftArrow.png");
+}
+.next{
+    background:url("../logo/rightArrow.png");
+}
+
+
+.logos{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.selected{
+    opacity: 1;
+}
+.unselected{
+    opacity: 0.6;
+}
+
